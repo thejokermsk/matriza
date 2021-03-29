@@ -18,7 +18,7 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef style="text-align: center; width: 100px;"> Действия </th>
     <td mat-cell *matCellDef="let element" style="text-align: center;">
-      <button mat-raised-button color="primary">
+      <button [routerLink]="'/event/'+ element.id" mat-raised-button color="primary">
         <mat-icon>launch</mat-icon>
       </button>
     </td>
