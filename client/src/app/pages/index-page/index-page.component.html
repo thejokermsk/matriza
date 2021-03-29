@@ -1,0 +1,31 @@
+<table #table mat-table [dataSource]="events" class="mat-elevation-z8" *ngIf="events.length !== 0">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Название встречи </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="date_event">
+    <th mat-header-cell *matHeaderCellDef style="width: 200px; text-align: center;"> Дата проведения </th>
+    <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.date_events | date: 'dd.MM.yyyy'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center; width: 100px;"> Действия </th>
+    <td mat-cell *matCellDef="let element" style="text-align: center;">
+      <button mat-raised-button color="primary">
+        <mat-icon>launch</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<p *ngIf="events.length === 0" style="text-align: center; margin-top: 100px; font-size: 32px;">Список событий пуст</p>

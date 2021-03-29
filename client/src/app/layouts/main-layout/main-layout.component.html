@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Матрица встреч</span>
+  </mat-toolbar>
+
+  <mat-drawer-container class="example-container" [hasBackdrop]="false">
+    <mat-drawer #drawer opened [mode]="'side'">
+      <nav class="nav">
+        <a routerLink="/" routerLinkActive="active" class="nav__link">Все события</a>
+      </nav>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

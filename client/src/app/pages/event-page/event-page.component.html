@@ -1,0 +1,24 @@
+<div class="row">
+  <ul>
+    <li>Время</li>
+    <li *ngFor="let item of event.data">{{item.name}}</li>
+  </ul>
+</div>
+<div class="table-wrapper">
+  <div class="column">
+    <ul>
+      <li *ngFor="let item of event.times">{{item.time}}</li>
+    </ul>
+  </div>
+  <div class="column" *ngFor="let item of event.data">
+    <ul>
+      <li *ngFor="let company of item.events">
+        {{company.company.name}}
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+
