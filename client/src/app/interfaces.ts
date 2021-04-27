@@ -12,13 +12,14 @@ export interface Data {
   id?: number
   name: string
   events: {
-    event_time: {time: string}
-    company: {name: string}
+    event_time: string
+    company: string
   }[]
 }
 
 
 export interface Event {
+  title: string
   times: Times[]
   data: Data[]
 }

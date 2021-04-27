@@ -3,11 +3,14 @@
     <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Матрица встреч</span>
+    <span routerLink="/" style="cursor: pointer;">Расписание встреч <span *ngIf="eventService.title.length !== 0">/ {{eventService.title}}</span></span>
+    <div class="example-spacer"></div>
+    <p style="height: 100%;display: flex;align-items: center;justify-content: center;margin: 0; padding-right: 20px;font-size: 25px;">{{time}}</p>
+    <a class="logo" href="/"><img  src="assets/logo.jpg" alt="Расписание встреч"></a>
   </mat-toolbar>
 
-  <mat-drawer-container class="example-container" [hasBackdrop]="false">
-    <mat-drawer #drawer opened [mode]="'side'">
+  <mat-drawer-container class="example-container" [hasBackdrop]="eventService.menu.hasBackdrop">
+    <mat-drawer #drawer [opened]="eventService.menu.show" [mode]="eventService.menu.mode">
       <nav class="nav">
         <a routerLink="/" routerLinkActive="active" class="nav__link">Все события</a>
       </nav>

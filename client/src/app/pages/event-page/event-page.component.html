@@ -1,24 +1,32 @@
-<div class="row">
-  <ul>
-    <li>Время</li>
-    <li *ngFor="let item of event.data">{{item.name}}</li>
+<div class="row" style="padding: 15px; padding-bottom: 0;" *ngIf="event && event.data && event.data.length !==0">
+  <ul class="russia-company">
+    <div style="display: flex;">
+      <li>Время</li>
+    </div>
+    <div style="display: flex;" *ngFor="let item of event.data">
+      <li *ngIf="item.status">
+        <span style="padding: 0 10px; width: 100%; text-align: left;">{{item.name}}</span>
+      </li>
+    </div>
   </ul>
 </div>
-<div class="table-wrapper">
+<div class="table-wrapper" style="padding: 15px;" *ngIf="event && event.data && event.data.length !== 0">
+
   <div class="column">
-    <ul>
+    <ul class="company company__times">
       <li *ngFor="let item of event.times">{{item.time}}</li>
     </ul>
   </div>
+
   <div class="column" *ngFor="let item of event.data">
-    <ul>
-      <li *ngFor="let company of item.events">
-        {{company.company.name}}
+    <ul class="company" *ngIf="item.status">
+      <li *ngFor="let company of item.events" style="cursor: pointer;" [matTooltip]="company.time">
+        <span style="padding: 0 15px; width: 100%; text-align: left;">{{company.company}}</span>
       </li>
     </ul>
   </div>
 
 </div>
 
-
+<p *ngIf="event === null || !event.data || event.data.length ===0" style="text-align: center; margin-top: 100px; font-size: 32px;">Список событий пуст</p>
 

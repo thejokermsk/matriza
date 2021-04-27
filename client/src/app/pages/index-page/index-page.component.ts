@@ -11,7 +11,7 @@ import { EventService } from 'src/app/services/event.service';
 export class IndexPageComponent implements OnInit, OnDestroy {
 
   constructor(
-    private eventService: EventService
+    private eventService: EventService,
   ) { }
 
   private oSub: Subscription

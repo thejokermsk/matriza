@@ -18,14 +18,14 @@ class RussiaCompanySerializer(serializers.ModelSerializer):
 class CompanySerializer(serializers.ModelSerializer):
   class Meta:
     model = Company
-    fields = ('name', )
+    fields = ('name', 'id',)
 
 
 class EventTimeSerializer(serializers.ModelSerializer):
 
   class Meta:
     model = EventTime
-    fields = ('time', )
+    fields = ('time', 'id',)
 
 
 class EventCompanySerializer(serializers.ModelSerializer):
@@ -33,7 +33,7 @@ class EventCompanySerializer(serializers.ModelSerializer):
 
   class Meta:
     model = EventCompony
-    fields = ('russia_company', )
+    fields = ('russia_company', 'id',)
 
 
 class CompanyTimeSerializer(serializers.ModelSerializer):
@@ -42,4 +42,4 @@ class CompanyTimeSerializer(serializers.ModelSerializer):
   
   class Meta:
     model = CompanyTime
-    fields = ('event_time', 'company')
+    fields = '__all__'

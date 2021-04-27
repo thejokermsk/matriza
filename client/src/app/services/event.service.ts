@@ -12,6 +12,15 @@ export class EventService {
     private http: HttpClient
   ) { }
 
+
+  public title: string = ''
+
+  public menu = {
+    mode: 'side',
+    hasBackdrop: false,
+    show: true
+  }
+
   public getList(params: {date?: string}): Observable<Events[]> {
     return this.http.get<Events[]>('/api/events', {
       params: new HttpParams({

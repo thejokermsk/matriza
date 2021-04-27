@@ -13,17 +13,9 @@ mat-toolbar {
 }
 
 mat-drawer-container {
-  flex: 1 0 auto;
-
   mat-drawer {
     width: 300px;
-
   }
-
-  mat-drawer-content {
-    padding: 15px;
-  }
-
 }
 
 .nav {
@@ -33,7 +25,7 @@ mat-drawer-container {
     height: 45px;
     display: flex;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 25px;
     text-decoration: none;
     color: black;
     transition: all .2s linear;
@@ -45,5 +37,15 @@ mat-drawer-container {
       background-color: #3f51b5;
       color: #fff;
     }
+  }
+}
+
+
+
+.logo {
+  height: 100%;
+
+  img {
+    height: 100%;
   }
 }
